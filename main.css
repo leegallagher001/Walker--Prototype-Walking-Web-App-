@@ -1,0 +1,110 @@
+/* ----- GENERAL ----- */
+/* Contains some styling common to most/every page */
+
+body {
+    font-family: "Urbanist", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #F4F0E4;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* HEADER */
+
+header {
+    text-align: center;
+    color: #5E4C06;
+}
+
+/* NAVIGATION BAR */
+
+.hamburger-menu {
+	position: relative;
+	width: 100%;
+	background-color: #A8FCB0;
+	color: #5E4C06;
+	display: block;
+	justify-content: center;
+	align-items: center;
+	z-index: 1;
+}
+
+#hamburger-icon {
+	font-size: 2em;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#menu {
+	position: absolute;
+	top: 60px;
+	left: 0;
+    width: 100%;
+    background-color: #A8FCB0;
+    color: #5E4C06;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+#menu a {
+    width: 33.333%;
+	padding: 10px 0px 10px 0px;
+	text-decoration: none;
+	text-align: center;
+	font-size: 2em;
+	background-color: #A8FCB0;
+    color: #532D02;
+}
+
+#menu a:hover {
+	background-color: #5E4C06;
+	color: #F4F0E4;
+	transition: background-color ease-in-out 0.3s, color ease-in-out 0.3s;
+}
+
+.dropdown-menu #menu {
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	flex-direction: column;
+	animation: slideDown 0.3s ease-in-out;
+}
+
+/* FOOTER */
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    background-color: #5E4C06;
+    color: #F4F0E4; 
+}
+
+/* ----- RESPONSIVES (MOBILE DESIGN) ----- */
+
+@media screen and (min-width: 800px) {
+
+    .hamburger-icon {
+        display: none;
+        padding: 10px 0px 10px 0px;
+    }
+
+    #menu {
+        top: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+}
