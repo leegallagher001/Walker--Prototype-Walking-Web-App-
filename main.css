@@ -7,11 +7,30 @@ body {
     font-weight: 400;
     font-style: normal;
     background-color: #F4F0E4;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
 }
 
 a {
     text-decoration: none;
     color: inherit;
+}
+
+/* COL (BOOTSTRAP) */
+
+[class*="col-"] {
+  float: left;
+}
+
+/* For mobile phones: */
+[class*="col-"] {
+  width: 100%;
 }
 
 /* HEADER */
@@ -55,11 +74,11 @@ header {
 }
 
 #menu a {
-    width: 33.333%;
+    width: 33.33%;
 	padding: 10px 0px 10px 0px;
 	text-decoration: none;
 	text-align: center;
-	font-size: 2em;
+	font-size: 1.5em;
 	background-color: #A8FCB0;
     color: #532D02;
 }
@@ -91,9 +110,47 @@ footer {
     color: #F4F0E4; 
 }
 
+/* HOME PAGE (index.html) */
+
+.home-page-card {
+    height: 700px;
+    color: #532D02;
+    text-align: center;
+}
+
+.home-page-card:hover {
+    color: #F4F0E4;
+    background-color: #5FB37A;
+    transition: background-color ease-in-out 0.3s, color ease-in-out 0.3s;
+}
+
+.home-card-content {
+    margin: 40px 20px 40px 20px;
+    font-size: 1.5em;
+}
+
+.home-card-content img {
+    display: inline-block;
+    width: 70%;
+    border-radius: 25px;
+}
+
 /* ----- RESPONSIVES (MOBILE DESIGN) ----- */
 
 @media screen and (min-width: 800px) {
+
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
 
     .hamburger-icon {
         display: none;

@@ -1,3 +1,5 @@
+/* Hamburger Navigation Menu Toggle */
+
 const hamburgerIcon = document.getElementById("hamburger-icon");
 const menu = document.getElementById("menu");
 const hamburgerMenu = document.querySelector(".hamburger-menu");
