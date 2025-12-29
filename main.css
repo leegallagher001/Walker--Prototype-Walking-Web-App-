@@ -267,6 +267,91 @@ footer {
     height: 700px;
 }
 
+.journal-entry-form {
+    display: inline-block;
+    text-align: center;
+    width: 90%;
+    border-radius: 25px;
+    border: 1px solid black;
+    box-shadow: 10px 10px 10px black;
+    margin: 20px;
+    padding: 20px;
+}
+
+.journal-new-entry-icon {
+    font-size: 5em;
+    border-radius: 25px;
+}
+
+.journal-new-entry-icon:hover {
+    color:#FFF6D2;
+    background-color: #5E4C06;
+    transition: background-color ease-in-out 0.3s, color ease-in-out 0.3s;
+    cursor: pointer;
+}
+
+.journal-new-entry-icon:active {
+    opacity: 0.5;
+}
+
+#new-entry {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    font-size: inherit;
+}
+
+#new-entry:active {
+    opacity: 0.5;
+}
+
+.journal-entry-form input, label, textarea {
+    width: 90%;
+    font-size: 2em;
+    display: inline-block;
+    margin: 5px 20px 5px 20px;
+}
+
+#journal-submit {
+    border-radius: 10px;
+    border: 3px solid #FFF6D2;
+    background-color: #5E4C06;
+    color: #F4F0E4;
+    padding: 10px 0px 10px 0px;
+    margin-top: 20px;
+    font-family: "Urbanist", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#journal-submit:hover {
+    background-color: #5FB37A;
+    transition: background-color ease-in-out 0.3s;
+    cursor: pointer;
+}
+
+#cancel-entry {
+    width: 90%;
+    font-size: 2em;
+    border-radius: 10px;
+    border: 3px solid #FFF6D2;
+    background-color: #5E4C06;
+    color: #F4F0E4;
+    padding: 10px 0px 10px 0px;
+    margin-top: 20px;
+    font-family: "Urbanist", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#cancel-entry:hover {
+    background-color: #5FB37A;
+    transition: background-color ease-in-out 0.3s;
+    cursor: pointer;
+}
+
 /* HABIT PAGE (habit.html) */
 
 .habit-page {
