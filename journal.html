@@ -38,14 +38,14 @@
         <div class="journal-app-container">
             <div class="journal-main-app">
                 <div class="journal-entry-form">
-                    <div class="journal-new-entry-icon">
+                    <div id="journal-new-entry-icon">
                         <button id="new-entry">&#43;</button>
                     </div>
-                    <form>
+                    <form id="journal-new-entry-form">
                         <label for="title">Entry Title:</label>
                         <input type="text" id="title" name="title" placeholder="Your Entry Title Here">
                         <label for="date">Entry Date:</label>
-                        <input type="number" id="date" name="date" placeholder="00">
+                        <input type="date" id="date" name="date" placeholder="00">
                         <label for="article">Enter Your Journal Entry:</label>
                         <textarea id="article" name="article" placeholder="Your Journal Entry Here"></textarea>
                         <input type="submit" id="journal-submit" value="Save Entry!">

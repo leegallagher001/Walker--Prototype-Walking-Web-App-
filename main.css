@@ -278,19 +278,19 @@ footer {
     padding: 20px;
 }
 
-.journal-new-entry-icon {
+#journal-new-entry-icon {
     font-size: 5em;
     border-radius: 25px;
 }
 
-.journal-new-entry-icon:hover {
+#journal-new-entry-icon:hover {
     color:#FFF6D2;
     background-color: #5E4C06;
     transition: background-color ease-in-out 0.3s, color ease-in-out 0.3s;
     cursor: pointer;
 }
 
-.journal-new-entry-icon:active {
+#journal-new-entry-icon:active {
     opacity: 0.5;
 }
 
@@ -310,6 +310,14 @@ footer {
     font-size: 2em;
     display: inline-block;
     margin: 5px 20px 5px 20px;
+}
+
+#journal-new-entry-form {
+    display: none;
+}
+
+.startNewEntry #journal-new-entry-form {
+    display: inline-block;
 }
 
 #journal-submit {
@@ -336,7 +344,7 @@ footer {
     font-size: 2em;
     border-radius: 10px;
     border: 3px solid #FFF6D2;
-    background-color: #5E4C06;
+    background-color: #532D02;
     color: #F4F0E4;
     padding: 10px 0px 10px 0px;
     margin-top: 20px;
