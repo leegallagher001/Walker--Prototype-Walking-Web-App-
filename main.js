@@ -10,19 +10,9 @@ hamburgerIcon.addEventListener("click", function () {
 
 /* Journal - New Entry Start Button */
 
-const newEntry = document.querySelector("#journal-new-entry-form");
-const newEntryButton = document.getElementById("journal-new-entry-icon");
+const newEntry = document.querySelector(".journal-entry-form"); /* allows application of "start-new-entry" class to the "journal-new-entry-form" element inside "journal-entry-form" */
+const newEntryButton = document.getElementById("journal-new-entry-icon"); /* lets us add an event listener to the icon */
 
-newEntryButton.addEventListener("click", function () {
-    newEntry.style.display = "inline-block";
-    newEntryButton.style.display = "none";
-});
-
-/* Journal - Cancel Entry Button */
-
-const cancelEntryButton = document.getElementById("cancel-entry");
-
-cancelEntryButton.addEventListener("click", function () {
-    newEntry.style.display = "none";
-    newEntryButton.style.display = "inline-block";
+newEntryButton.addEventListener("click", function () { /* on button "newEntryButton" clicked */
+    newEntry.classList.toggle("start-new-entry"); /* applies "start-new-entry" class to form if not applied, removes it if it is already applied */
 });

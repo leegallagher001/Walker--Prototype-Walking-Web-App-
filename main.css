@@ -105,9 +105,11 @@ header a:hover {
 
 @keyframes slideDown { /* creates slide down effect for dropdown menu */
     0% {
+        opacity: 0;
         transform: translateY(-20%);
     }
     100% {
+        opacity: 1;
         transform: translateY(0%);
     }
 }
@@ -316,8 +318,9 @@ footer {
     display: none;
 }
 
-.startNewEntry #journal-new-entry-form {
+.start-new-entry #journal-new-entry-form {
     display: inline-block;
+    animation: slideDown 1s ease-in-out;
 }
 
 #journal-submit {
@@ -334,27 +337,6 @@ footer {
 }
 
 #journal-submit:hover {
-    background-color: #5FB37A;
-    transition: background-color ease-in-out 0.3s;
-    cursor: pointer;
-}
-
-#cancel-entry {
-    width: 90%;
-    font-size: 2em;
-    border-radius: 10px;
-    border: 3px solid #FFF6D2;
-    background-color: #532D02;
-    color: #F4F0E4;
-    padding: 10px 0px 10px 0px;
-    margin-top: 20px;
-    font-family: "Urbanist", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-}
-
-#cancel-entry:hover {
     background-color: #5FB37A;
     transition: background-color ease-in-out 0.3s;
     cursor: pointer;
