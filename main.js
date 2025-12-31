@@ -16,3 +16,21 @@ const newEntryButton = document.getElementById("journal-new-entry-icon"); /* let
 newEntryButton.addEventListener("click", function () { /* on button "newEntryButton" clicked */
     newEntry.classList.toggle("start-new-entry"); /* applies "start-new-entry" class to form if not applied, removes it if it is already applied */
 });
+
+/* Journal - Submit Entry Button */
+
+const submitButton = document.getElementById("journal-submit");
+
+submitButton.addEventListener("click", function(e) {
+
+    e.preventDefault(); // prevents page refreshing by default as usually happens when a form is submitted
+
+    const entryTitle = document.getElementById("title").value; // uses "value" rather than "textContent" for form input fields
+    const entryDate = document.getElementById("date").value;
+    const entryArticle = document.getElementById("article").value;
+
+    console.log("Entry Title: " + entryTitle);
+    console.log("Entry Date: " + entryDate);
+    console.log("Entry Article: " + entryArticle);
+
+});
