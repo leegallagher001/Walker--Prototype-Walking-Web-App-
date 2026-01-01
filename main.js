@@ -17,7 +17,7 @@ newEntryButton.addEventListener("click", function () { /* on button "newEntryBut
     newEntry.classList.toggle("start-new-entry"); /* applies "start-new-entry" class to form if not applied, removes it if it is already applied */
 });
 
-/* Journal - Submit Entry Button */
+/* Journal - Submit Entry Button & Create New Entry */
 
 const submitButton = document.getElementById("journal-submit");
 
@@ -25,12 +25,36 @@ submitButton.addEventListener("click", function(e) {
 
     e.preventDefault(); // prevents page refreshing by default as usually happens when a form is submitted
 
+    const journalMainApp = document.querySelector(".journal-app-container");
+    const newArticle = document.createElement("div");
+    const newArticleContent = document.createElement("div");
+    const titleTag = document.createElement("h2");
+    const dateTag = document.createElement("h2");
+    const newEntryArticle = document.createElement("p");
+
     const entryTitle = document.getElementById("title").value; // uses "value" rather than "textContent" for form input fields
     const entryDate = document.getElementById("date").value;
     const entryArticle = document.getElementById("article").value;
 
-    console.log("Entry Title: " + entryTitle);
-    console.log("Entry Date: " + entryDate);
-    console.log("Entry Article: " + entryArticle);
+    titleTag.innerHTML = entryTitle;
+    dateTag.innerHTML = entryDate;
+    newEntryArticle.innerHTML = entryArticle;
+
+    newArticle.id = "new-article";
+    newArticle.style.display = "inline-block";
+    newArticle.style.border = "1px solid black";
+    newArticle.style.borderRadius = "25px";
+    newArticle.style.width = "100%";
+    newArticle.style.margin = "100px 0px 100px 0px";
+    newArticle.style.boxShadow = "10px 10px 10px black";
+
+    newArticleContent.id = "new-article-content";
+    newArticleContent.style.margin = "20px";
+
+    journalMainApp.appendChild(newArticle);
+    newArticle.appendChild(newArticleContent);
+    document.getElementById("new-article-content").appendChild(titleTag);
+    document.getElementById("new-article-content").appendChild(dateTag);
+    document.getElementById("new-article-content").appendChild(newEntryArticle);
 
 });
