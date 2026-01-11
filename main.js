@@ -26,21 +26,31 @@ submitButton.addEventListener("click", function(e) {
     e.preventDefault(); // prevents page refreshing by default as usually happens when a form is submitted
 
     const journalMainApp = document.querySelector(".journal-app-container");
+
     const newArticle = document.createElement("div");
     const newArticleContent = document.createElement("div");
     const titleTag = document.createElement("h2");
     const dateTag = document.createElement("h2");
     const newEntryArticle = document.createElement("p");
+    const stepCount = document.createElement("p");
 
     const entryTitle = document.getElementById("title").value; // uses "value" rather than "textContent" for form input fields
     const entryDate = document.getElementById("date").value;
     const entryArticle = document.getElementById("article").value;
+    const entryStepCount = document.getElementById("stepcount").value;
 
     titleTag.innerHTML = entryTitle;
     dateTag.innerHTML = entryDate;
     newEntryArticle.innerHTML = entryArticle;
+    stepCount.innerHTML = "Steps Taken: " + entryStepCount;
 
-    newArticle.id = "new-article";
+    stepCount.style.fontWeight = "bold"; // styling of the "step count" element in saved articles
+    stepCount.style.padding = "5px";
+    stepCount.style.backgroundColor = "#532D02";
+    stepCount.style.color = "#F4F0E4";
+    stepCount.style.borderRadius = "10px";
+
+    newArticle.id = "new-article"; // styling of "new article" element
     newArticle.style.display = "inline-block";
     newArticle.style.border = "1px solid black";
     newArticle.style.borderRadius = "25px";
@@ -56,5 +66,6 @@ submitButton.addEventListener("click", function(e) {
     document.getElementById("new-article-content").appendChild(titleTag);
     document.getElementById("new-article-content").appendChild(dateTag);
     document.getElementById("new-article-content").appendChild(newEntryArticle);
+    document.getElementById("new-article-content").appendChild(stepCount);
 
 });
