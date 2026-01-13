@@ -372,13 +372,86 @@ footer {
 
 .habit-page {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
 }
 
 .habit-content {
     display: inline-block;
     margin: 20px;
     text-align: center;
+}
+
+.habit-app-container {
+    display: inline-block;
+    width: 90%;
+    height: 700px;
+    margin-bottom: 150px;
+}
+
+.habit-main-app {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 25px;
+    border: 1px solid black;
+    box-shadow: 10px 10px 10px black;
+    height: 700px;
+}
+
+.habit-entry-form {
+    display: inline-block;
+    text-align: center;
+    width: 40%;
+    height: 300px;
+    border-radius: 25px;
+    border: 1px solid black;
+    box-shadow: 10px 10px 10px black;
+    margin: 20px;
+    padding: 20px;
+}
+
+.habit-entry-form input, label {
+    width: 90%;
+    font-size: 2em;
+    display: inline-block;
+    margin: 5px 20px 5px 20px;
+}
+
+.habit-entry-form input {
+    border-radius: 10px;
+    padding: 5px;
+    background-color: #532D02;
+    color: #F4F0E4;
+    font-family: "Urbanist", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.5em;
+}
+
+#habit-submit {
+    width: 90%;
+    font-size: 2em;
+    border-radius: 10px;
+    border: 3px solid #FFF6D2;
+    background-color: #5E4C06;
+    color: #F4F0E4;
+    padding: 10px 0px 10px 0px;
+    margin-top: 20px;
+    font-family: "Urbanist", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#habit-submit:hover {
+    background-color: #5FB37A;
+    transition: background-color ease-in-out 0.3s;
+    cursor: pointer;
 }
 
 /* ----- RESPONSIVES (MOBILE DESIGN) ----- */
