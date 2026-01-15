@@ -21,51 +21,34 @@ newEntryButton.addEventListener("click", function () { /* on button "newEntryBut
 
 const submitButton = document.getElementById("journal-submit");
 
-submitButton.addEventListener("click", function(e) {
-
-    e.preventDefault(); // prevents page refreshing by default as usually happens when a form is submitted
-
-    const journalMainApp = document.querySelector(".journal-app-container");
-
-    const newArticle = document.createElement("div");
-    const newArticleContent = document.createElement("div");
-    const titleTag = document.createElement("h2");
-    const dateTag = document.createElement("h2");
-    const newEntryArticle = document.createElement("p");
-    const stepCount = document.createElement("p");
-
-    const entryTitle = document.getElementById("title").value; // uses "value" rather than "textContent" for form input fields
+submitButton.addEventListener("click", function() {
+    const entryTitle = document.getElementById("title").value;
     const entryDate = document.getElementById("date").value;
     const entryArticle = document.getElementById("article").value;
-    const entryStepCount = document.getElementById("stepcount").value;
+    const entryStepcount = document.getElementById("stepcount").value;
 
-    titleTag.innerHTML = entryTitle;
-    dateTag.innerHTML = entryDate;
-    newEntryArticle.innerHTML = entryArticle;
-    stepCount.innerHTML = "Steps Taken: " + entryStepCount;
+    const newEntry = {
+        title: entryTitle,
+        date: entryDate,
+        article: entryArticle,
+        stepcount: entryStepcount
+    }
 
-    stepCount.style.fontWeight = "bold"; // styling of the "step count" element in saved articles
-    stepCount.style.padding = "5px";
-    stepCount.style.backgroundColor = "#532D02";
-    stepCount.style.color = "#F4F0E4";
-    stepCount.style.borderRadius = "10px";
-
-    newArticle.id = "new-article"; // styling of "new article" element
-    newArticle.style.display = "inline-block";
-    newArticle.style.border = "1px solid black";
-    newArticle.style.borderRadius = "25px";
-    newArticle.style.width = "100%";
-    newArticle.style.margin = "100px 0px 100px 0px";
-    newArticle.style.boxShadow = "10px 10px 10px black";
-
-    newArticleContent.id = "new-article-content";
-    newArticleContent.style.margin = "20px";
-
-    journalMainApp.appendChild(newArticle);
-    newArticle.appendChild(newArticleContent);
-    document.getElementById("new-article-content").appendChild(titleTag);
-    document.getElementById("new-article-content").appendChild(dateTag);
-    document.getElementById("new-article-content").appendChild(newEntryArticle);
-    document.getElementById("new-article-content").appendChild(stepCount);
+    localStorage.setItem(entryTitle, JSON.stringify(newEntry));
 
 });
+
+/* Journal - Display Current Entries */
+
+for (let i = 0; i < localStorage.length; i++) {
+    
+    const key = localStorage.key(i);
+    const savedEntry = JSON.parse(this.localStorage.getItem(key));
+
+
+    console.log("Title: " + savedEntry.title);
+    console.log("Date: " + savedEntry.date);
+    console.log("Article: " + savedEntry.article);
+    console.log("Stepcount: " + savedEntry.stepcount);
+    console.log("-----------------------");
+}
