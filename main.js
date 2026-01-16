@@ -51,4 +51,41 @@ for (let i = 0; i < localStorage.length; i++) {
     console.log("Article: " + savedEntry.article);
     console.log("Stepcount: " + savedEntry.stepcount);
     console.log("-----------------------");
+
+    const journalContainer = document.createElement("div");
+
+    journalContainer.style.width = "90%";
+    journalContainer.style.display = "inline-block";
+    journalContainer.style.border = "1px solid black";
+    journalContainer.style.borderRadius = "25px";
+    journalContainer.style.margin = "20px";
+    journalContainer.style.backgroundColor = "#5E4C06";
+    journalContainer.style.color = "#FFF6D2";
+
+    const journalAppContainer = document.querySelector(".journal-app-container");
+    journalAppContainer.appendChild(journalContainer);
+
+    const journalEntry = document.createElement("div");
+
+    journalEntry.style.width = "100%";
+    journalEntry.style.padding = "10px";
+    journalEntry.style.textAlign = "left";
+
+    const journalTitle = document.createElement("h2");
+    journalTitle.innerHTML = savedEntry.title;
+    journalEntry.appendChild(journalTitle);
+
+    const journalDate = document.createElement("p");
+    journalDate.innerHTML = savedEntry.date;
+    journalEntry.appendChild(journalDate);
+
+    const journalArticle = document.createElement("p");
+    journalArticle.innerHTML = savedEntry.article;
+    journalEntry.appendChild(journalArticle);
+
+    const journalStepcount = document.createElement("p");
+    journalStepcount.innerHTML = "Stepcount: " + savedEntry.stepcount;
+    journalEntry.appendChild(journalStepcount);
+
+    journalContainer.appendChild(journalEntry);
 }
