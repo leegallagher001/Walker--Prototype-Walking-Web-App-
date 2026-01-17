@@ -62,8 +62,8 @@ for (let i = 0; i < localStorage.length; i++) {
     journalContainer.style.backgroundColor = "#5E4C06";
     journalContainer.style.color = "#FFF6D2";
 
-    const journalAppContainer = document.querySelector(".journal-app-container");
-    journalAppContainer.appendChild(journalContainer);
+    const journalSavedEntries = document.querySelector(".journal-saved-entries");
+    journalSavedEntries.appendChild(journalContainer);
 
     const journalEntry = document.createElement("div");
 
