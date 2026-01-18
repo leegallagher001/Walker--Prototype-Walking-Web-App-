@@ -68,7 +68,7 @@ for (let i = 0; i < localStorage.length; i++) {
     const journalEntry = document.createElement("div");
 
     journalEntry.style.width = "100%";
-    journalEntry.style.padding = "10px";
+    journalEntry.style.padding = "5px 10px 5px 10px";
     journalEntry.style.textAlign = "left";
 
     const journalTitle = document.createElement("h2");
@@ -85,6 +85,13 @@ for (let i = 0; i < localStorage.length; i++) {
 
     const journalStepcount = document.createElement("p");
     journalStepcount.innerHTML = "Stepcount: " + savedEntry.stepcount;
+    journalStepcount.style.backgroundColor = "#FFF6D2";
+    journalStepcount.style.color = "#5E4C06";
+    journalStepcount.style.padding = "15px";
+    journalStepcount.style.borderRadius = "15px";
+    journalStepcount.style.width = "20%";
+    journalStepcount.style.textAlign = "center";
+    journalStepcount.style.fontWeight = "bold";
     journalEntry.appendChild(journalStepcount);
 
     journalContainer.appendChild(journalEntry);
