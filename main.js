@@ -71,19 +71,47 @@ for (let i = 0; i < localStorage.length; i++) {
     journalEntry.style.padding = "5px 10px 5px 10px";
     journalEntry.style.textAlign = "left";
 
-    const journalTitle = document.createElement("h2");
+    const journalTitle = document.createElement("h2"); // the entry title
     journalTitle.innerHTML = savedEntry.title;
     journalEntry.appendChild(journalTitle);
 
-    const journalDate = document.createElement("p");
+    const journalEntryBtn = document.createElement("button"); // button to expand a saved journal entry - styling below
+    journalEntryBtn.innerHTML = "+";
+    journalEntryBtn.style.fontSize = "2.5em";
+    journalEntryBtn.style.display = "inline-block";
+    journalEntryBtn.style.float = "right";
+    journalEntryBtn.style.padding = "0px 15px 0px 15px";
+    journalEntryBtn.style.border = "none";
+    journalEntryBtn.style.borderRadius = "50%";
+    journalEntryBtn.style.margin = "0px 50px 0px 25px";
+    journalEntryBtn.style.fontFamily = "Urbanist";
+    journalEntryBtn.style.fontWeight = "400";
+    journalEntryBtn.style.fontStyle = "normal";
+    journalEntryBtn.style.backgroundColor = "#5E4C06";
+    journalEntryBtn.style.color = "#FFF6D2";
+
+    journalEntryBtn.addEventListener('mouseover', () => {
+        journalEntryBtn.style.backgroundColor = "#FFF6D2";
+        journalEntryBtn.style.color = "#5E4C06";
+        journalEntryBtn.style.transition = "background-color ease-in-out 0.3s, color ease-in-out 0.3s";
+    });
+
+        journalEntryBtn.addEventListener('mouseout', () => {
+        journalEntryBtn.style.backgroundColor = "#5E4C06";
+        journalEntryBtn.style.color = "#FFF6D2";
+    });
+
+    journalEntry.appendChild(journalEntryBtn);
+
+    const journalDate = document.createElement("p"); // the entry date
     journalDate.innerHTML = savedEntry.date;
     journalEntry.appendChild(journalDate);
 
-    const journalArticle = document.createElement("p");
+    const journalArticle = document.createElement("p"); // the entry main article
     journalArticle.innerHTML = savedEntry.article;
     journalEntry.appendChild(journalArticle);
 
-    const journalStepcount = document.createElement("p");
+    const journalStepcount = document.createElement("p"); // the entry stepcount with emphasised styling
     journalStepcount.innerHTML = "Stepcount: " + savedEntry.stepcount;
     journalStepcount.style.backgroundColor = "#FFF6D2";
     journalStepcount.style.color = "#5E4C06";
