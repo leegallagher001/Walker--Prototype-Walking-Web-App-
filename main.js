@@ -71,18 +71,31 @@ for (let i = 0; i < localStorage.length; i++) {
     journalEntry.style.padding = "5px 10px 5px 10px";
     journalEntry.style.textAlign = "left";
 
+    const journalEntryHeader = document.createElement("div"); // the entry header
+    journalEntryHeader.style.width = "98%";
+    journalEntryHeader.style.display = "flex";
+    journalEntryHeader.style.flexDirection = "row";
+    journalEntryHeader.style.justifyContent = "space-between";
+    journalEntryHeader.style.borderRadius = "25px";
+    journalEntryHeader.style.padding = "5px 0px 5px 0px";
+    journalEntry.appendChild(journalEntryHeader);
+
     const journalTitle = document.createElement("h2"); // the entry title
     journalTitle.innerHTML = savedEntry.title;
-    journalEntry.appendChild(journalTitle);
+    journalTitle.style.display = "inline-block";
+    journalTitle.style.width = "25%";
+    journalTitle.style.textAlign = "left";
+    journalTitle.style.padding = "0px 20px 0px 20px";
+    journalEntryHeader.appendChild(journalTitle);
 
     const journalEntryBtn = document.createElement("button"); // button to expand a saved journal entry - styling below
     journalEntryBtn.innerHTML = "+";
+    journalEntryBtn.style.width = "7.5%";
     journalEntryBtn.style.fontSize = "2.5em";
     journalEntryBtn.style.display = "inline-block";
-    journalEntryBtn.style.float = "right";
-    journalEntryBtn.style.padding = "0px 15px 0px 15px";
+    journalEntryBtn.style.padding = "0px 10px 0px 10px";
     journalEntryBtn.style.border = "none";
-    journalEntryBtn.style.borderRadius = "50%";
+    journalEntryBtn.style.borderRadius = "25px";
     journalEntryBtn.style.margin = "0px 50px 0px 25px";
     journalEntryBtn.style.fontFamily = "Urbanist";
     journalEntryBtn.style.fontWeight = "400";
@@ -90,37 +103,59 @@ for (let i = 0; i < localStorage.length; i++) {
     journalEntryBtn.style.backgroundColor = "#5E4C06";
     journalEntryBtn.style.color = "#FFF6D2";
 
-    journalEntryBtn.addEventListener('mouseover', () => {
-        journalEntryBtn.style.backgroundColor = "#FFF6D2";
-        journalEntryBtn.style.color = "#5E4C06";
-        journalEntryBtn.style.transition = "background-color ease-in-out 0.3s, color ease-in-out 0.3s";
-    });
+    journalEntryHeader.appendChild(journalEntryBtn);
 
-        journalEntryBtn.addEventListener('mouseout', () => {
-        journalEntryBtn.style.backgroundColor = "#5E4C06";
-        journalEntryBtn.style.color = "#FFF6D2";
-    });
-
-    journalEntry.appendChild(journalEntryBtn);
-
-    const journalDate = document.createElement("p"); // the entry date
+    const journalDate = document.createElement("h2"); // the entry date
     journalDate.innerHTML = savedEntry.date;
-    journalEntry.appendChild(journalDate);
+    journalDate.style.display = "inline-block";
+    journalDate.style.fontWeight = "bold";
+    journalDate.style.width = "25%";
+    journalDate.style.textAlign = "right";
+    journalDate.style.padding = "0px 20px 0px 20px";
+    journalEntryHeader.appendChild(journalDate);
+
+    journalEntry.appendChild(journalEntryHeader);
 
     const journalArticle = document.createElement("p"); // the entry main article
     journalArticle.innerHTML = savedEntry.article;
+    journalArticle.style.display = "none";
+    journalArticle.style.margin = "0px 20px 0px 20px";
     journalEntry.appendChild(journalArticle);
 
     const journalStepcount = document.createElement("p"); // the entry stepcount with emphasised styling
     journalStepcount.innerHTML = "Stepcount: " + savedEntry.stepcount;
+    journalStepcount.style.display = "none";
     journalStepcount.style.backgroundColor = "#FFF6D2";
     journalStepcount.style.color = "#5E4C06";
-    journalStepcount.style.padding = "15px";
+    journalStepcount.style.padding = "10px";
+    journalStepcount.style.margin = "25px 20px 25px 20px";
     journalStepcount.style.borderRadius = "15px";
     journalStepcount.style.width = "20%";
     journalStepcount.style.textAlign = "center";
     journalStepcount.style.fontWeight = "bold";
     journalEntry.appendChild(journalStepcount);
+
+    journalEntryBtn.addEventListener('mouseover', () => { // event listeners for button
+        journalEntryBtn.style.backgroundColor = "#FFF6D2";
+        journalEntryBtn.style.color = "#5E4C06";
+        journalEntryBtn.style.transition = "background-color ease-in-out 0.3s, color ease-in-out 0.3s";
+    });
+
+    journalEntryBtn.addEventListener('mouseout', () => {
+        journalEntryBtn.style.backgroundColor = "#5E4C06";
+        journalEntryBtn.style.color = "#FFF6D2";
+    });
+
+    journalEntryBtn.addEventListener('click', () => {
+        if (journalArticle.style.display === "none") {
+            journalArticle.style.display = "block";
+            journalStepcount.style.display = "block";
+            journalContainer.style.animation = "slideDown 1s ease-in-out";
+        } else {
+            journalArticle.style.display = "none";
+            journalStepcount.style.display = "none";
+        }
+    });
 
     journalContainer.appendChild(journalEntry);
 }
